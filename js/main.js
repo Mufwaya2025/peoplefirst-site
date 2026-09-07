@@ -239,7 +239,7 @@
         'Phone: ' + (f('phone') || '-') + '\n' +
         'Area of interest: ' + (f('service') || 'Not sure yet') + '\n\n' +
         f('message') + '\n';
-      var to = form.getAttribute('data-to') || 'bandamupheje@gmail.com';
+      var to = form.getAttribute('data-to') || 'info@peoplefirst.ink';
       window.location.href = 'mailto:' + to + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
       if (note) {
         note.innerHTML = 'Your email app should open with the message ready to send. If it didn’t, email us directly at <a href="mailto:' + to + '"><strong>' + to + '</strong></a> or call <a href="tel:+260977648552"><strong>+260 977 648 552</strong></a>.';
