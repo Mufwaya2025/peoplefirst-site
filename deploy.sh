@@ -9,11 +9,12 @@ HOST="deploy@46.62.231.109"
 SSH=(ssh -i "$KEY" -o IdentitiesOnly=yes "$HOST")
 cd "$(dirname "$0")"
 
-VER=$(cat css/styles.css js/main.js | (sha1sum 2>/dev/null || shasum) | cut -c1-8)
+VER=$(cat css/styles.css css/fonts.css js/main.js | (sha1sum 2>/dev/null || shasum) | cut -c1-8)
 BUILD=$(mktemp -d)
-cp -r css js robots.txt sitemap.xml "$BUILD"/
+cp -r css js fonts robots.txt sitemap.xml "$BUILD"/
 for f in 404.html about.html approach.html contact.html index.html services.html; do
   sed -e "s#css/styles\.css\(?v=[^\"]*\)\?#css/styles.css?v=$VER#g" \
+      -e "s#css/fonts\.css\(?v=[^\"]*\)\?#css/fonts.css?v=$VER#g" \
       -e "s#js/main\.js\(?v=[^\"]*\)\?#js/main.js?v=$VER#g" "$f" > "$BUILD/$f"
 done
 echo "Asset version: $VER"
