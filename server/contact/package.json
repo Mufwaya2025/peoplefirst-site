@@ -1,0 +1,13 @@
+{
+  "name": "peoplefirst-contact",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Contact form backend for peoplefirst.ink",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "nodemailer": "^6.9.16"
+  }
+}

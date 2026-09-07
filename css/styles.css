@@ -237,3 +237,24 @@ footer{background:var(--blue-900);color:rgba(255,255,255,.7);padding:56px 0 30px
 .skip-link:focus{left:16px;outline:3px solid var(--gold-500);}
 .nav-links a:focus-visible,.footer-col a:focus-visible{outline:3px solid var(--gold-500);outline-offset:3px;border-radius:3px;}
 .tab-btn[aria-selected="true"]{background:var(--blue-900);border-color:var(--blue-900);color:#fff;box-shadow:var(--shadow-tight);}
+
+/* form states */
+.form-note.ok{background:#EAF7EF;border-color:#BFE5CD;color:#1F5E36;}
+.form-note.warn{background:#FFF6E0;border-color:#F5D98A;color:#6B4E00;}
+.form-foot .btn[disabled]{opacity:.65;cursor:progress;transform:none;}
+.hp{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;}
+
+/* floating WhatsApp button */
+.wa-float{position:fixed;right:20px;bottom:20px;z-index:90;display:flex;align-items:center;gap:10px;padding:12px 18px 12px 14px;border-radius:999px;background:#25D366;color:#fff;font-weight:700;font-size:14px;box-shadow:0 12px 28px -8px rgba(37,211,102,.6);transition:transform .25s var(--ease), box-shadow .25s var(--ease);}
+.wa-float svg{width:24px;height:24px;flex-shrink:0;}
+.wa-float:hover{transform:translateY(-3px);box-shadow:0 16px 32px -8px rgba(37,211,102,.7);}
+.wa-float:focus-visible{outline:3px solid var(--blue-900);outline-offset:3px;}
+@media (max-width:640px){.wa-float{right:14px;bottom:14px;padding:13px;}.wa-float span{position:absolute;left:-9999px;}}
+@media (prefers-reduced-motion: reduce){.wa-float{transition:none;}}
+
+/* contact page: WhatsApp card */
+.contact-big-card.wa{background:#0B3D2A;}
+.contact-big-card.wa .icn{background:rgba(37,211,102,.18);}
+.contact-big-card.wa .icn svg{color:#25D366;}
+.contact-hero-grid.three{grid-template-columns:repeat(3,1fr);}
+@media (max-width:900px){.contact-hero-grid.three{grid-template-columns:1fr;}}
